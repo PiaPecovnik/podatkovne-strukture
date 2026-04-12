@@ -66,7 +66,8 @@ namespace naloga2
         {
             foreach (char znak in pomozni_sklad)
             {
-                if (prioritetaOperatorja(znak) < prioritetaOperatorja(precitaniPodatek))
+                if (znak == '(') return false;
+                if (prioritetaOperatorja(znak) < prioritetaOperatorja(precitaniPodatek)) // NE: && precitaniPodatek != '('
                 {
                     return false;
                 }
@@ -97,7 +98,7 @@ namespace naloga2
                         }
                         else
                         {
-                            while (pomozni_sklad.Count != 0 && imaSkladOperatorZVisjoPrioriteto(pomozni_sklad, precitaniPodatek) && precitaniPodatek != '(')
+                            while (pomozni_sklad.Count != 0 && imaSkladOperatorZVisjoPrioriteto(pomozni_sklad, precitaniPodatek))
                             {
                                 char pom_operator = pomozni_sklad.Pop();
                                 postfiksni_izraz.Enqueue(pom_operator);
@@ -127,11 +128,59 @@ namespace naloga2
             return postfiksni_izraz;
         }
 
+        public static double preverjanjeSimbolovInRacunanje(double operand1, double operand2, char simbol)
+        {
+            double rezultat;
+            switch (simbol)
+            {
+                case '+':
+                    rezultat = operand1 + operand2;
+                    break;
+
+                case '-':
+                    rezultat = operand1 - operand2;
+                    break;
+
+                case '*':
+                    rezultat = operand1 * operand2;
+                    break;
+
+                case '/':
+                    rezultat = operand1 / operand2;
+                    break;
+
+                case '^':
+                    rezultat = Math.Pow(operand1, operand2);
+                    break;
+
+                default:
+                    throw new ArgumentException("Neznan operator");
+            }
+            return rezultat;
+        }
+
         public static double izracunaj_skladovni_stroj(Queue<char> postfiksni_izraz)
         {
             Stack<double> skladovni_stroj = new Stack<double>();
 
-            // TODO
+            while (postfiksni_izraz.Count > 0)
+            {
+                char precitaniPodatek = postfiksni_izraz.Dequeue();
+
+                if (jeOperand(precitaniPodatek))
+                {
+                    double pretvorjenPodatek = Convert.ToDouble(precitaniPodatek.ToString());
+                    skladovni_stroj.Push(pretvorjenPodatek);
+                }
+                else
+                {
+                    double operand2 = skladovni_stroj.Pop(); //dobimo 2. operand za racunanje
+                    double operand1 = skladovni_stroj.Pop(); // dobimo 1. operand za racunanje
+
+                    double rezultat = preverjanjeSimbolovInRacunanje(operand1, operand2, precitaniPodatek);
+                    skladovni_stroj.Push(rezultat);
+                }
+            }
 
             // na skladu mora ostat samo rezultat
             return (skladovni_stroj.Count != 0) ? skladovni_stroj.Pop() : Int32.MinValue;
@@ -158,7 +207,7 @@ namespace naloga2
              Queue<char> vrsta = pretvori_niz_v_vrsto(niz);
              string pretvorjeno = new string(vrsta.ToArray());
              Console.WriteLine(pretvorjeno);
-             */
+             
 
             //pretvori infiks v postfiks
             Queue<char> primer1 = new Queue<char>();
@@ -184,30 +233,51 @@ namespace naloga2
 
             Queue<char> test3 = pretvorba_infiks_v_postfiks(primer3);
             Console.WriteLine("Test 3:");
-            Console.WriteLine("Expected:  423^-2+");
+            Console.WriteLine("Expected: 423^-2+");
             Console.WriteLine("Result:   " + new string(test3.ToArray()));
             Console.WriteLine();
+
 
             Queue<char> primer4 = new Queue<char>();
             foreach (char c in "(3-2)*(2+1)") primer4.Enqueue(c);
 
             Queue<char> test4 = pretvorba_infiks_v_postfiks(primer4);
             Console.WriteLine("Test 4:");
-            Console.WriteLine("Expected:  3 2-21+*");
+            Console.WriteLine("Expected:  32-21+*");
             Console.WriteLine("Result:   " + new string(test4.ToArray()));
             Console.WriteLine();
 
-            /*
+            
+            Queue<char> primer4 = new Queue<char>();
+            foreach (char c in "21+53-^") primer4.Enqueue(c);  // preverjeni so bili vsi primeri iz navodil
+            double rez = izracunaj_skladovni_stroj(primer4);
+            Console.WriteLine("REZULTAT: " + rez);
+            */
+
             string[] izrazi = {
                 "1+2+3",
                 "2-2*2+2",
-                "2*6/3-2+2"
+                "2*6/3-2+2",
+                "4*5-8",
+                "2-5+4",
+                "8/4+2",
+                "2^2^2",
+                "4-2^3+2",
+                "(3-2)*(2+1)",
+                "(2+1)^(5-3)"
             };
 
             double[] rezultati = {
                 6.0,
                 0.0,
-                4.0
+                4.0,
+                12.0,
+                1.0,
+                4.0,
+                16.0,
+                -2.0,
+                3.0,
+                9.0
             };
 
             int N = izrazi.Length;
@@ -220,7 +290,7 @@ namespace naloga2
                 else
                     Console.WriteLine("Napačen rezultat za izraz " + izrazi[i] + ": " + rezultat + " (pričakovan rezultat: " + rezultati[i] + ").");
             }
-            */
+
         }
     }
 }
