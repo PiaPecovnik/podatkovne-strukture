@@ -1,0 +1,15 @@
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\bin\Debug\net10.0\naloga4.exe
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\bin\Debug\net10.0\naloga4.deps.json
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\bin\Debug\net10.0\naloga4.runtimeconfig.json
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\bin\Debug\net10.0\naloga4.dll
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\bin\Debug\net10.0\naloga4.pdb
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\naloga4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\naloga4.AssemblyInfoInputs.cache
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\naloga4.AssemblyInfo.cs
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\naloga4.csproj.CoreCompileInputs.cache
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\naloga4.sourcelink.json
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\naloga4.dll
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\refint\naloga4.dll
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\naloga4.pdb
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\naloga4.genruntimeconfig.cache
+C:\Users\HP\OneDrive - Univerza v Mariboru\Namizje\FAKS\1_letnik\2. semester\podatkovne strukture\vaje\podatkovne-strukture\Naloga4\naloga4\naloga4\obj\Debug\net10.0\ref\naloga4.dll
